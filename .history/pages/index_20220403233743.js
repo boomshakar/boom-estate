@@ -31,10 +31,9 @@ export const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, link
 	</Flex>
 );
 
-const Home = ({ propertiesForSale, propertiesForRent }) => {
+const Home = ({ propertiesForSale, propertiesForSale2, propertiesForRent, propertiesForRent2 }) => {
 	// console.log({ propertiesForSale2 });
 	// console.log({ propertiesForRent2 });
-	// console.log({ propertiesForSale });
 	return (
 		<Box>
 			<Banner
@@ -76,20 +75,22 @@ export async function getStaticProps() {
 	const propertyForSale = await fetchApi(
 		`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`
 	);
-	// const propertyForSale2 = await fetchApi2();
-	// `${baseUrl2}/properties/v2/list-for-sale?city=New York City&state_code=NY&limit=200&offset=0&sort=relevance`
+	const propertyForSale2 = await fetchApi2(
+		`${baseUrl2}/properties/v2/list-for-sale?city=New York City&state_code=NY&limit=200&offset=0&sort=relevance`
+	);
 	const propertyForRent = await fetchApi(
 		`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`
 	);
-	// const propertyForRent2 = await fetchApi2();
-	// `${baseUrl2}/properties/v2/list-for-rent?city=New York City&state_code=NY&limit=200&offset=0&sort=relevance`
+	const propertyForRent2 = await fetchApi2(
+		`${baseUrl2}/properties/v2/list-for-rent?city=New York City&state_code=NY&limit=200&offset=0&sort=relevance`
+	);
 
 	return {
 		props: {
 			propertiesForSale: propertyForSale?.hits,
-			// propertiesForSale2: propertyForSale2?.properties,
+			propertiesForSale2: propertyForSale2?.properties,
 			propertiesForRent: propertyForRent?.hits,
-			// propertiesForRent2: propertyForRent2?.properties,
+			propertiesForRent2: propertyForRent2?.properties,
 		},
 	};
 }

@@ -34,7 +34,7 @@ export const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, link
 const Home = ({ propertiesForSale, propertiesForRent }) => {
 	// console.log({ propertiesForSale2 });
 	// console.log({ propertiesForRent2 });
-	// console.log({ propertiesForSale });
+	console.log({ propertiesForSale });
 	return (
 		<Box>
 			<Banner
@@ -76,12 +76,12 @@ export async function getStaticProps() {
 	const propertyForSale = await fetchApi(
 		`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`
 	);
-	// const propertyForSale2 = await fetchApi2();
+	const propertyForSale2 = await fetchApi2();
 	// `${baseUrl2}/properties/v2/list-for-sale?city=New York City&state_code=NY&limit=200&offset=0&sort=relevance`
 	const propertyForRent = await fetchApi(
 		`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`
 	);
-	// const propertyForRent2 = await fetchApi2();
+	const propertyForRent2 = await fetchApi2();
 	// `${baseUrl2}/properties/v2/list-for-rent?city=New York City&state_code=NY&limit=200&offset=0&sort=relevance`
 
 	return {
