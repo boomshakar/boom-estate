@@ -26,7 +26,7 @@ const Property = ({
 	},
 }) => (
 	// <Link href={`/property/${externalID}`} passHref>
-	<Box p="3" justifyContent="flex-start">
+	<Box p="3" paddingTop="0px" justifyContent="flex-start">
 		<Flex
 			flexWrap="wrap"
 			w="402px"
@@ -35,11 +35,8 @@ const Property = ({
 			borderColor="gray.200"
 			borderRadius="10px"
 			_hover={{
-				backgroundColor: "black.300",
-				boxShadow: "2xl",
-				rounded: "md",
-				bg: "white",
-				transition: "all .3s ease-in-out ",
+				background: "black.300",
+				color: "teal.500",
 			}}
 		>
 			<Link href={`/property/${externalID}`} passHref>
