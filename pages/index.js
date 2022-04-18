@@ -5,6 +5,8 @@ import { Flex, Box, Text, Button } from "@chakra-ui/react";
 import Property from "../components/Property";
 import { baseUrl, baseUrl2, fetchApi, fetchApi2 } from "../utils/fetchApi";
 
+import homeImg from "../assets/images/etienne-beauregard-riverin-B0aCvAVSX8E-unsplash.svg";
+
 export const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, linkName, imageUrl }) => (
 	<Flex flexWrap="wrap" justifyContent="center" alignItems="center" m="10">
 		<Image src={imageUrl} width={500} alt="" height={300} />
@@ -31,12 +33,40 @@ export const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, link
 	</Flex>
 );
 
+const MainBanner = ({}) => (
+	<Box
+		// bgImage="url('/images/gaara.png')"
+		bgPosition="center"
+		bgSize="cover"
+		bgRepeat="no-repeat"
+		width="100%"
+		height="100%"
+		_before={{
+			content: '""',
+			bgImage:
+				// `url(https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg)`,
+				`url(${homeImg})`,
+			bgSize: "cover",
+			pos: "absolute",
+			top: 0,
+			right: 0,
+			left: 0,
+			bottom: 0,
+			opacity: 0.9,
+		}}
+	>
+		hhhh
+	</Box>
+);
+
 const Home = ({ propertiesForSale, propertiesForRent }) => {
 	// console.log({ propertiesForSale2 });
-	// console.log({ propertiesForRent2 });
+	// console.log({ propertiesForRent });
 	// console.log({ propertiesForSale });
+
 	return (
 		<Box>
+			<MainBanner />
 			<Banner
 				purpose="RENT A HOME"
 				title1="Rental Homes for"
