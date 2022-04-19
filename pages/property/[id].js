@@ -29,7 +29,7 @@ const PropertyDetails = ({
 }) => {
 	let newLocationArr = [].concat(location).reverse();
 	let convertedLocationStr = newLocationArr.map(({ name }) => name);
-	console.log({ re: convertedLocationStr.join(", ") });
+	// console.log({ re: convertedLocationStr.join(", ") });
 	return (
 		<Box maxWidth="1000px" margin="auto" p="4">
 			{photos && <ImageScrollbar data={photos} />}
