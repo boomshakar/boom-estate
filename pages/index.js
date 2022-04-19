@@ -6,6 +6,7 @@ import Property from "../components/Property";
 import { baseUrl, baseUrl2, fetchApi, fetchApi2 } from "../utils/fetchApi";
 
 import homeImg from "../assets/images/etienne-beauregard-riverin-B0aCvAVSX8E-unsplash.svg";
+import "../styles/Home.module.scss";
 
 export const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, linkName, imageUrl }) => (
 	<Flex flexWrap="wrap" justifyContent="center" alignItems="center" m="10">
@@ -66,7 +67,7 @@ const Home = ({ propertiesForSale, propertiesForRent }) => {
 
 	return (
 		<Box>
-			<MainBanner />
+			{/* <MainBanner /> */}
 			<Banner
 				purpose="RENT A HOME"
 				title1="Rental Homes for"

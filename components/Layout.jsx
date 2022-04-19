@@ -14,7 +14,7 @@ export default function Layout({ children }) {
 				<header>
 					<Navbar />
 				</header>
-				<Box as="main" pt={20}>
+				<Box as="main" bg="#E5E5E5" pt={20}>
 					{children}
 				</Box>
 				<footer>

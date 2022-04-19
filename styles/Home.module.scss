@@ -1,0 +1,13 @@
+@import "test";
+
+.testre {
+	background-color: gold;
+	padding: 2rem;
+}
+
+@include desktop() {
+	.grid {
+		width: 100%;
+		flex-direction: column;
+	}
+}
